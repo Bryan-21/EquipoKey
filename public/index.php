@@ -40,8 +40,8 @@ require_once __DIR__ . '/../includes/DbConnect.php';
 ////////////////////////////////////////////////
 
 
-
 include 'funciones/alumnos.php';
 include 'funciones/login.php';
+
 $app->run();
 

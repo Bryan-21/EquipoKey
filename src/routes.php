@@ -20,8 +20,7 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 $app->group('/api', function () use ($app) {
    
     //REGISTROUSUARIOS
-
-
+    
     $app->post('/insert','setalumno');
     $app->get('/selectall','gettodoslosalumnos');
     $app->get('/select','getalumno');
@@ -31,6 +30,5 @@ $app->group('/api', function () use ($app) {
     $app->get('/usuario','setUsuario');
     $app->post('/usuario','getUsuario');
     $app->get('/gel','getGel');
-    
 
 });
