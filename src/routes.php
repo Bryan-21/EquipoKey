@@ -30,11 +30,16 @@ $app->group('/api', function () use ($app) {
     $app->get('/usuario','setUsuario');
     $app->post('/usuario','getUsuario');
     $app->post('/productos','insertarProductos');
-    //proyecto
+    //proyecto_terr
     $app->post('/territorios','insertTerritorios');
     $app->delete('/territorios','deleteTerritorios');
     $app->put('/territorios','updateTerritorios');
     $app->get('/territorios','selectTerritorios');
+    //proyecto_pat
+    $app->post('/patogenos','insertpatogenos');
+    $app->delete('/patogenos','deletepatogenos');
+    $app->put('/patogenos','updatepatogenos');
+    $app->get('/patogenos','selectpatogenos');
     
 
 });

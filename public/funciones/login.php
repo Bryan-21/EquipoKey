@@ -25,7 +25,7 @@ class Usuario{
             $statement->bindParam("id",$usuario->id);
             $statement->bindParam("contrasena",$usuario->contrasena);
             $statement->execute();
-            $response->mensaje="El usuario se inserto Correctamente";
+            $response="El usuario se inserto Correctamente";
         }catch(Exception $e){
             $response=$e;
         }

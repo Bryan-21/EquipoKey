@@ -44,6 +44,7 @@ include 'funciones/alumnos.php';
 include 'funciones/login.php';
 include 'funciones/productos.php';
 include 'funciones/territorios.php';
+include 'funciones/patogenos.php';
 
 $app->run();
 
