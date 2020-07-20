@@ -29,6 +29,12 @@ $app->group('/api', function () use ($app) {
     $app->post('/alumno','setalumno');
     $app->get('/usuario','setUsuario');
     $app->post('/usuario','getUsuario');
+    $app->post('/productos','insertarProductos');
+    //proyecto
+    $app->post('/territorios','insertTerritorios');
+    $app->delete('/territorios','deleteTerritorios');
+    $app->put('/territorios','updateTerritorios');
+    $app->get('/territorios','selectTerritorios');
     
 
 });
