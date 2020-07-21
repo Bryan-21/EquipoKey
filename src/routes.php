@@ -27,8 +27,9 @@ $app->group('/api', function () use ($app) {
     $app->put('/update','updatealumno');
     $app->delete('/delete','deletealumno');
     $app->post('/alumno','setalumno');
-    $app->get('/usuario','setUsuario');
-    $app->post('/usuario','getUsuario');
+    $app->post('/usuario','setUsuario');
+    $app->get('/usuario','getUsuario');
+    $app->put('/usuario','selectUsuarios');
     //proyecto_productos
     $app->post('/productos','insertProductos');
     $app->delete('/productos','deleteProductos');
