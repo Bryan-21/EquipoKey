@@ -45,6 +45,7 @@ include 'funciones/login.php';
 include 'funciones/productos.php';
 include 'funciones/territorios.php';
 include 'funciones/patogenos.php';
+include 'funciones/tipo_producto.php';
 
 $app->run();
 

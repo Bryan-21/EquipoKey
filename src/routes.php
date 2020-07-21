@@ -40,6 +40,11 @@ $app->group('/api', function () use ($app) {
     $app->delete('/patogenos','deletepatogenos');
     $app->put('/patogenos','updatepatogenos');
     $app->get('/patogenos','selectpatogenos');
+    //proyecto_tipo
+    $app->post('/tipo_producto','insertTipo_productos');
+    $app->delete('/tipo_producto','deleteTipo_productos');
+    $app->put('/tipo_producto','updateTipo_productos');
+    $app->get('/tipo_producto','selectTipo_productos');
     
 
 });
