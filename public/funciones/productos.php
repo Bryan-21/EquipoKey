@@ -30,7 +30,7 @@ class Producto{
         $productos;
         $response;
         $producto=json_decode($request->getBody());
-        $sql="INSERT INTO productos(idProducto,nombre,idTerritorio,idPatogeno,idTipo) VALUES(:idProducto,:nombre,:idTerritorio,:idPatogeno,:idTipo)";    
+        $sql="INSERT INTO productos(idProducto,nombre,idTerritorio,idPatogeno,idTipo,descripcion) VALUES(:idProducto,:nombre,:idTerritorio,:idPatogeno,:idTipo,:descripcion)";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam("idProducto",$producto->idProducto);
@@ -38,6 +38,7 @@ class Producto{
             $statement->bindParam("idTerritorio",$producto->idTerritorio);
             $statement->bindParam("idPatogeno",$producto->idPatogeno);
             $statement->bindParam("idTipo",$producto->idTipo);
+            $statement->bindParam("descripcion",$producto->descripcion);
             $statement->execute();
             $response->mensaje="El producto se inserto Correctamente";
         }catch(Exception $e){
@@ -67,15 +68,15 @@ class Producto{
         $productos;
         $response;
         $producto=json_decode($request->getBody());
-        $sql="UPDATE productos SET nombre=:nombre,idTerritorio=:idTerritorio,idPatogeno=:idPatogeno,idTipo=:idTipo WHERE idProducto = :idProducto";    
+        $sql="UPDATE productos SET nombre=:nombre,idTerritorio=:idTerritorio,idPatogeno=:idPatogeno,idTipo=:idTipo,descripcion=:descripcion WHERE idProducto = :idProducto";    
         try{            
             $statement=$this->conexion->prepare($sql);
-            //no hay comentarios
             $statement->bindParam("idProducto",$producto->idProducto);
             $statement->bindParam("nombre",$producto->nombre);
             $statement->bindParam("idTerritorio",$producto->idTerritorio);
             $statement->bindParam("idPatogeno",$producto->idPatogeno);
             $statement->bindParam("idTipo",$producto->idTipo);
+            $statement->bindParam("descripcion",$producto->descripcion);
             $statement->execute();
             $response->mensaje="El producto se modifico Correctamente";
         }catch(Exception $e){

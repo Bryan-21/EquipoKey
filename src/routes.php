@@ -19,7 +19,7 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
 // API group
 $app->group('/api', function () use ($app) {
    
-    //REGISTROUSUARIOS
+    
     
     $app->post('/insert','setalumno');
     $app->get('/selectall','gettodoslosalumnos');
@@ -27,9 +27,12 @@ $app->group('/api', function () use ($app) {
     $app->put('/update','updatealumno');
     $app->delete('/delete','deletealumno');
     $app->post('/alumno','setalumno');
+
+    //REGISTROUSUARIOS
     $app->post('/usuario','setUsuario');
     $app->get('/usuario','getUsuario');
     $app->put('/usuario','selectUsuarios');
+    $app->delete('/usuario','deleteUsuarios');
     //proyecto_productos
     $app->post('/productos','insertProductos');
     $app->delete('/productos','deleteProductos');

@@ -50,7 +50,6 @@ class Territorio{
         $sql="DELETE FROM territorios WHERE idTerritorio = :idTerritorio";    
         try{            
             $statement=$this->conexion->prepare($sql);
-            //no hay comentarios
             $statement->bindParam("idTerritorio",$territorio->idTerritorio);
             $statement->execute();
             $response->mensaje="El Territorio se elimino Correctamente";
