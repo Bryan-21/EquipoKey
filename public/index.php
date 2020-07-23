@@ -42,10 +42,11 @@ require_once __DIR__ . '/../includes/DbConnect.php';
 
 include 'funciones/alumnos.php';
 include 'funciones/login.php';
-include 'funciones/productos.php';
-include 'funciones/territorios.php';
-include 'funciones/patogenos.php';
-include 'funciones/tipo_producto.php';
+include 'funciones/especies.php';
+include 'funciones/caracter_especie.php';
+include 'funciones/animales.php';
+include 'funciones/caracter_animal.php';
+
 
 $app->run();
 
