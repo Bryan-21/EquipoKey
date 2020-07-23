@@ -14,9 +14,9 @@ function updateEspecies($request){
 return $especies->updateEspecies($request);
 }
 
-function selectProductos($request){
+function selectEspecies($request){
     $especies=new Especie();
-return $especies->selectProductos($request);
+return $especies->selectEspecies($request);
 }
 
 class Especie{
@@ -78,7 +78,7 @@ class Especie{
         return json_encode($response);
     }
 
-    function selectProductos($request){
+    function selectEspecies($request){
         $especies;
         $response;
         $especie=json_decode($request->getBody());

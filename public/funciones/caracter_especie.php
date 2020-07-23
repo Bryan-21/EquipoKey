@@ -1,22 +1,22 @@
 <?
-function insertCaracteristicas($request){
+function insertCaracteristicas_e($request){
     $caracteristicas=new Caracteristica();
-return $caracteristicas->insertCaracteristicas($request);
+return $caracteristicas->insertCaracteristicas_e($request);
 }
 
-function deleteCaracteristicas($request){
+function deleteCaracteristicas_e($request){
     $caracteristicas=new Caracteristica();
-return $caracteristicas->deleteCaracteristicas($request);
+return $caracteristicas->deleteCaracteristicas_e($request);
 }
 
-function updateCaracteristicas($request){
+function updateCaracteristicas_e($request){
     $caracteristicas=new Caracteristica();
-return $caracteristicas->updateCaracteristicas($request);
+return $caracteristicas->updateCaracteristicas_e($request);
 }
 
-function selectCaracteristicas($request){
+function selectCaracteristicas_e($request){
     $caracteristicas=new Caracteristica();
-return $caracteristicas->selectCaracteristicas($request);
+return $caracteristicas->selectCaracteristicas_e($request);
 }
 
 class Caracteristica{
@@ -26,15 +26,15 @@ class Caracteristica{
         $this->conexion=$database->connect();
     }
 
-    function insertCaracteristicas($request){
+    function insertCaracteristicas_e($request){
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());
-        $sql="INSERT INTO caracteristicas(id_caracter_especie,caracteristicas_e,id_especie) VALUES (:id_caracter_especie,:caracteristicas_e,:id_especie)";    
+        $sql="INSERT INTO caracteristicas(id_caracter_especie,caracteristica_e,id_especie) VALUES (:id_caracter_especie,:caracteristica_e,:id_especie)";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam("id_caracter_especie",$caracteristica->id_caracter_especie);
-            $statement->bindParam("caracteristicas_e",$caracteristica->caracteristicas_e);
+            $statement->bindParam("caracteristica_e",$caracteristica->caracteristica_e);
             $statement->bindParam("id_especie",$caracteristica->id_especie);
             $statement->execute();
             $response->mensaje="La Caracteristica se inserto Correctamente";
@@ -44,7 +44,7 @@ class Caracteristica{
         return json_encode($response);
     }
 
-    function deleteCaracteristicas($request){
+    function deleteCaracteristicas_e($request){
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());
@@ -61,16 +61,16 @@ class Caracteristica{
         return json_encode($response);
     }
 
-    function updateCaracteristicas($request){
+    function updateCaracteristicas_e($request){
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());
-        $sql="UPDATE caracteristicas SET caracteristicas_e = :caracteristicas_e, id_especie = :id_especie WHERE id_caracter_especie = :id_caracter_especie";    
+        $sql="UPDATE caracteristicas SET caracteristica_e = :caracteristica_e, id_especie = :id_especie WHERE id_caracter_especie = :id_caracter_especie";    
         try{            
             $statement=$this->conexion->prepare($sql);
             //no hay comentarios
             $statement->bindParam("id_caracter_especie",$caracteristica->id_caracter_especie);
-            $statement->bindParam("caracteristicas_e",$caracteristica->caracteristicas_e);
+            $statement->bindParam("caracteristica_e",$caracteristica->caracteristica_e);
             $statement->bindParam("id_especie",$caracteristica->id_especie);
             $statement->execute();
             $response->mensaje="La Caracteristica se modifico Correctamente";
@@ -80,7 +80,7 @@ class Caracteristica{
         return json_encode($response);
     }
 
-    function selectCaracteristicas($request){
+    function selectCaracteristicas_e($request){
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());

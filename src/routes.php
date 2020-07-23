@@ -39,10 +39,10 @@ $app->group('/api', function () use ($app) {
     $app->put('/especies','updateEspecies');
     $app->get('/especies','selectEspecies');
     //proyecto_caracter_especie
-    $app->post('/caracteristicas_e','insertCaracteristicas');
-    $app->delete('/caracteristicas_e','deleteCaracteristicas');
-    $app->put('/caracteristicas_e','updateCaracteristicas');
-    $app->get('/caracteristicas_e','selectCaracteristicas');
+    $app->post('/caracteristicas_e','insertCaracteristicas_e');
+    $app->delete('/caracteristicas_e','deleteCaracteristicas_e');
+    $app->put('/caracteristicas_e','updateCaracteristicas_e');
+    $app->get('/caracteristicas_e','selectCaracteristicas_e');
     //proyecto_animales
     $app->post('/animales','insertAnimales');
     $app->delete('/animales','deleteAnimales');
