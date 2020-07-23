@@ -30,12 +30,12 @@ class Caracteristicas{
         $caracteristicas;
         $response;
         $Caracteristicas=json_decode($request->getBody());
-        $sql="INSERT INTO carac_animal(id_caracter,caracteriticas_a,id_animal) VALUES (:id_caracter,:caracteritica_a,:id_animal)";    
+        $sql="INSERT INTO carac_animal(id_caracter,caracteristica_a,id_animal) VALUES (:id_caracter,:caracteristica_a,:id_animal)";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam("id_caracter",$Caracteristicas->id_caracter);
-            $statement->bindParam("caracteritica_a",$Caracteristicas->caracteritica_a);
-            $statement->bindParam("id_animal",$Caracteristicas->id_caracter);
+            $statement->bindParam("caracteristica_a",$Caracteristicas->caracteristica_a);
+            $statement->bindParam("id_animal",$Caracteristicas->id_animal);
             $statement->execute();
             $response->mensaje="La Caracteristicas se inserto Correctamente";
         }catch(Exception $e){
@@ -65,12 +65,12 @@ class Caracteristicas{
         $caracteristicas;
         $response;
         $Caracteristicas=json_decode($request->getBody());
-        $sql="UPDATE carac_animal SET caracteritica_a = :caracteritica_a, id_animal = :id_animal WHERE id_caracter = :id_caracter";    
+        $sql="UPDATE carac_animal SET caracteristica_a = :caracteristica_a,id_animal = :id_animal WHERE id_caracter = :id_caracter";    
         try{            
             $statement=$this->conexion->prepare($sql);
             //no hay comentarios
             $statement->bindParam("id_caracter",$Caracteristicas->id_caracter);
-            $statement->bindParam("caracteritica_a",$Caracteristicas->caracteritica_a);
+            $statement->bindParam("caracteristica_a",$Caracteristicas->caracteristica_a);
             $statement->bindParam("id_animal",$Caracteristicas->id_animal);
             $statement->execute();
             $response->mensaje="La Caracteristicas se modifico Correctamente";
