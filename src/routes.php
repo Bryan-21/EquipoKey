@@ -33,26 +33,26 @@ $app->group('/api', function () use ($app) {
     $app->get('/usuario','getUsuario');
     $app->put('/usuario','selectUsuarios');
     $app->delete('/usuario','deleteUsuarios');
-    //proyecto_productos
-    $app->post('/productos','insertProductos');
-    $app->delete('/productos','deleteProductos');
-    $app->put('/productos','updateProductos');
-    $app->get('/productos','selectProductos');
-    //proyecto_territorios
-    $app->post('/territorios','insertTerritorios');
-    $app->delete('/territorios','deleteTerritorios');
-    $app->put('/territorios','updateTerritorios');
-    $app->get('/territorios','selectTerritorios');
-    //proyecto_patogenos
-    $app->post('/patogenos','insertpatogenos');
-    $app->delete('/patogenos','deletepatogenos');
-    $app->put('/patogenos','updatepatogenos');
-    $app->get('/patogenos','selectpatogenos');
-    //proyecto_tipo
-    $app->post('/tipo_producto','insertTipo_productos');
-    $app->delete('/tipo_producto','deleteTipo_productos');
-    $app->put('/tipo_producto','updateTipo_productos');
-    $app->get('/tipo_producto','selectTipo_productos');
+    //proyecto_especies
+    $app->post('/especies','insertEspecies');
+    $app->delete('/especies','deleteEspecies');
+    $app->put('/especies','updateEspecies');
+    $app->get('/especies','selectEspecies');
+    //proyecto_caracter_especie
+    $app->post('/caracteristicas_e','insertCaracteristicas');
+    $app->delete('/caracteristicas_e','deleteCaracteristicas');
+    $app->put('/caracteristicas_e','updateCaracteristicas');
+    $app->get('/caracteristicas_e','selectCaracteristicas');
+    //proyecto_animales
+    $app->post('/animales','insertAnimales');
+    $app->delete('/animales','deleteAnimales');
+    $app->put('/animales','updateAnimales');
+    $app->get('/animales','selectAnimales');
+    //proyecto_caracter_animal
+    $app->post('/caracteristicas_a','insertCaracteristicas');
+    $app->delete('/caracteristicas_a','deleteCaracteristicas');
+    $app->put('/caracteristicas_a','updateCaracteristicas');
+    $app->get('/caracteristicas_a','selectCaracteristicas');
     
 
 });
