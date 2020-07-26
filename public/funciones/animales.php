@@ -30,7 +30,7 @@ class Animal{
         $animales;
         $response;
         $animal=json_decode($request->getBody());
-        $sql="INSERT INTO animal(id_animal,nombre_a,id_especie) VALUES (:id_animal,:nombre_a,:id_especie)";    
+        $sql="INSERT INTO animales(id_animal,nombre_a,id_especie) VALUES (:id_animal,:nombre_a,:id_especie)";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam("id_animal",$animal->id_animal);
@@ -48,7 +48,7 @@ class Animal{
         $animales;
         $response;
         $animal=json_decode($request->getBody());
-        $sql="DELETE FROM animal WHERE id_animal = :id_animal";    
+        $sql="DELETE FROM animales WHERE id_animal = :id_animal";    
         try{            
             $statement=$this->conexion->prepare($sql);
             //no hay comentarios
@@ -65,7 +65,7 @@ class Animal{
         $animales;
         $response;
         $animal=json_decode($request->getBody());
-        $sql="UPDATE animal SET nombre_a = :nombre_a, id_especie = :id_especie WHERE id_animal = :id_animal";    
+        $sql="UPDATE animales SET nombre_a = :nombre_a, id_especie = :id_especie WHERE id_animal = :id_animal";    
         try{            
             $statement=$this->conexion->prepare($sql);
             //no hay comentarios
@@ -84,7 +84,7 @@ class Animal{
         $animales;
         $response;
         $animal=json_decode($request->getBody());
-        $sql="SELECT * FROM animal ORDER BY id_animal";    
+        $sql="SELECT * FROM animales ORDER BY id_animal";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement=$this->conexion->prepare($sql);            

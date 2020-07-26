@@ -30,7 +30,7 @@ class Caracteristica{
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());
-        $sql="INSERT INTO caracteristicas(id_caracter_especie,caracteristica_e,id_especie) VALUES (:id_caracter_especie,:caracteristica_e,:id_especie)";    
+        $sql="INSERT INTO caracteristica(id_caracter_especie,caracteristica_e,id_especie) VALUES (:id_caracter_especie,:caracteristica_e,:id_especie)";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam("id_caracter_especie",$caracteristica->id_caracter_especie);
@@ -48,7 +48,7 @@ class Caracteristica{
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());
-        $sql="DELETE FROM caracteristicas WHERE id_caracter_especie = :id_caracter_especie";    
+        $sql="DELETE FROM caracteristica WHERE id_caracter_especie = :id_caracter_especie";    
         try{            
             $statement=$this->conexion->prepare($sql);
             //no hay comentarios
@@ -65,7 +65,7 @@ class Caracteristica{
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());
-        $sql="UPDATE caracteristicas SET caracteristica_e = :caracteristica_e, id_especie = :id_especie WHERE id_caracter_especie = :id_caracter_especie";    
+        $sql="UPDATE caracteristica SET caracteristica_e = :caracteristica_e, id_especie = :id_especie WHERE id_caracter_especie = :id_caracter_especie";    
         try{            
             $statement=$this->conexion->prepare($sql);
             //no hay comentarios
@@ -84,7 +84,7 @@ class Caracteristica{
         $caracteristicas;
         $response;
         $caracteristica=json_decode($request->getBody());
-        $sql="SELECT * FROM caracteristicas ORDER BY id_caracter_especie";    
+        $sql="SELECT * FROM caracteristica ORDER BY id_caracter_especie";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement=$this->conexion->prepare($sql);            

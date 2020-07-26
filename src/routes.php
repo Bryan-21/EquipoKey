@@ -30,29 +30,29 @@ $app->group('/api', function () use ($app) {
 
     //REGISTROUSUARIOS
     $app->post('/usuario','setUsuario');
-    $app->get('/usuario','getUsuario');
+    $app->patch('/usuario','getUsuario');
     $app->put('/usuario','selectUsuarios');
     $app->delete('/usuario','deleteUsuarios');
     //proyecto_especies
     $app->post('/especies','insertEspecies');
     $app->delete('/especies','deleteEspecies');
     $app->put('/especies','updateEspecies');
-    $app->get('/especies','selectEspecies');
+    $app->patch('/especies','selectEspecies');
     //proyecto_caracter_especie
     $app->post('/caracteristicas_e','insertCaracteristicas_e');
     $app->delete('/caracteristicas_e','deleteCaracteristicas_e');
     $app->put('/caracteristicas_e','updateCaracteristicas_e');
-    $app->get('/caracteristicas_e','selectCaracteristicas_e');
+    $app->patch('/caracteristicas_e','selectCaracteristicas_e');
     //proyecto_animales
     $app->post('/animales','insertAnimales');
     $app->delete('/animales','deleteAnimales');
     $app->put('/animales','updateAnimales');
-    $app->get('/animales','selectAnimales');
+    $app->patch('/animales','selectAnimales');
     //proyecto_caracter_animal
     $app->post('/caracteristicas_a','insertCaracteristicas');
     $app->delete('/caracteristicas_a','deleteCaracteristicas');
     $app->put('/caracteristicas_a','updateCaracteristicas');
-    $app->get('/caracteristicas_a','selectCaracteristicas');
+    $app->patch('/caracteristicas_a','selectCaracteristicas');
     
 
 });

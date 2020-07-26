@@ -32,13 +32,13 @@ class Usuario{
         $usuarios;
         $response;
         $usuario=json_decode($request->getBody());
-        $sql="INSERT INTO usuarios(id,contrasena,nombre,rol) VALUES(:id,:contrasena,:nombre,:rol)";    
+        $sql="INSERT INTO usuarios(id,contrasena,nombre) VALUES(:id,:contrasena,:nombre)";    
         try{            
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam("id",$usuario->id);
             $statement->bindParam("contrasena",$usuario->contrasena);
             $statement->bindParam("nombre",$usuario->nombre);
-            $statement->bindParam("rol",$usuario->rol);
+            //$statement->bindParam("rol",$usuario->rol);
             $statement->execute();
             $response="El usuario se inserto Correctamente";
         }catch(Exception $e){
@@ -52,11 +52,13 @@ class Usuario{
         $usuarios;
         $response;
         $usuario=json_decode($request->getBody());
+        //error_log("\n".json_encode($usuario,JSON_PRETTY_PRINT),3,"/home/storage/error.log");
         $sql="SELECT * FROM usuarios WHERE id =:id and contrasena=:contrasena";    
         try{          
             $statement=$this->conexion->prepare($sql);  
             $statement->bindParam(":id",$usuario->id);
             $statement->bindParam(":contrasena",$usuario->contrasena);
+            //$statement->bindParam(":rol",$usuario->rol);
             $statement->execute();
             $response=$statement->fetchall(PDO::FETCH_OBJ); 
             if(!empty($response)){
